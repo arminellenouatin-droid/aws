@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 236 45% 4%;
+    --foreground: 45 40% 96%;
+
+    --card: 235 38% 7%;
+    --card-foreground: 45 40% 96%;
+
+    --popover: 235 38% 7%;
+    --popover-foreground: 45 40% 96%;
+
+    --primary: 43 90% 61%;
+    --primary-foreground: 236 45% 6%;
+
+    --secondary: 235 25% 15%;
+    --secondary-foreground: 45 30% 90%;
+
+    --muted: 235 20% 14%;
+    --muted-foreground: 235 15% 65%;
+
+    --accent: 43 90% 61%;
+    --accent-foreground: 236 45% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 235 20% 18%;
+    --input: 235 20% 18%;
+    --ring: 43 90% 61%;
+
+    --radius: 0.75rem;
+
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060713;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2242;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f5c042;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(13, 17, 39, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 192, 66, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(245, 192, 66, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(245, 192, 66, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Text gold gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ffd875 0%, #f5c042 50%, #e5a720 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

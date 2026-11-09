@@ -1,0 +1,54 @@
+{
+  "common": {
+    "brand": "AWS : Africa World Saving",
+    "tagline": "Sanctuaire spirituel d'Afrique & de la Diaspora",
+    "consult": "Consulter un guide",
+    "discover": "Consultation découverte",
+    "shop": "Boutique sacrée",
+    "forum": "Cercle communautaire",
+    "blog": "Enseignements & Rituels",
+    "about": "Notre Mission",
+    "contact": "Contact",
+    "login": "Connexion",
+    "register": "Rejoindre le Cercle",
+    "ethicalNotice": "Avertissement : Les consultations ont une vocation de guidance personnelle et spirituelle. Elles ne se substituent en aucun cas à un avis médical, psychologique ou juridique. Aucun résultat absolu n'est garanti. Services réservés aux personnes majeures (+18 ans)."
+  },
+  "nav": {
+    "home": "Accueil",
+    "consultations": "Consultations",
+    "practitioners": "Guides & Maîtres",
+    "shop": "Boutique",
+    "forum": "Forum",
+    "academy": "Formations",
+    "about": "À Propos"
+  },
+  "hero": {
+    "badge": "Harmonie • Protection • Éveil Spirituel",
+    "titlePrefix": "Retrouvez votre alignement,",
+    "titleHighlight": "libérez votre destinée.",
+    "subtitle": "Accompagnement spirituel authentique, enraciné dans la sagesse ancestrale africaine et accessible partout dans le monde via une plateforme confidentielle, sécurisée et bienveillante.",
+    "ctaPrimary": "Réserver une guidance",
+    "ctaSecondary": "Découvrir nos rituels",
+    "statsConsultations": "+12 400 accompagnements réalisés",
+    "statsSatisfaction": "98.7% d'avis bienveillants",
+    "statsCountries": "34 pays connectés"
+  },
+  "features": {
+    "title": "Une approche sacrée, respectueuse et moderne",
+    "f1Title": "Guides & Maîtres Vérifiés",
+    "f1Desc": "Chaque praticien est sélectionné selon une charte d'intégrité stricte, respectueuse des traditions sans abus ni promesses illusoires.",
+    "f2Title": "Confidentialité Totale",
+    "f2Desc": "Vos échanges, notes et rituels sont protégés par un chiffrement de niveau bancaire et une politique stricte de secret partagé.",
+    "f3Title": "Paiement 100% Sécurisé",
+    "f3Desc": "Règlement simplifié en Mobile Money (MTN, Moov, Orange, Wave) et Carte Bancaire via notre partenaire certifié Chariow.",
+    "f4Title": "Disponible sur Tout Appareil",
+    "f4Desc": "Conçu spécifiquement pour les connexions mobiles en Afrique et dans la diaspora, même en bas débit 3G/4G."
+  },
+  "footer": {
+    "copyright": "© 2026 AWS : Africa World Saving. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité (APDP & RGPD)",
+    "terms": "Conditions Générales",
+    "disclaimer": "Charte éthique et avertissement"
+  }
+}

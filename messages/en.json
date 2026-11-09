@@ -1,0 +1,54 @@
+{
+  "common": {
+    "brand": "AWS : Africa World Saving",
+    "tagline": "Spiritual Sanctuary of Africa & Diaspora",
+    "consult": "Consult a Spiritual Guide",
+    "discover": "Discovery Consultation",
+    "shop": "Sacred Shop",
+    "forum": "Community Circle",
+    "blog": "Teachings & Rituals",
+    "about": "Our Mission",
+    "contact": "Contact",
+    "login": "Sign In",
+    "register": "Join the Circle",
+    "ethicalNotice": "Notice: Consultations are intended for spiritual and personal guidance. They do not substitute medical, psychological, or legal counsel. No specific outcome is guaranteed. Services restricted to adults (+18 years)."
+  },
+  "nav": {
+    "home": "Home",
+    "consultations": "Consultations",
+    "practitioners": "Guides & Masters",
+    "shop": "Shop",
+    "forum": "Forum",
+    "academy": "Academy",
+    "about": "About"
+  },
+  "hero": {
+    "badge": "Harmony • Protection • Spiritual Awakening",
+    "titlePrefix": "Restore your spiritual balance,",
+    "titleHighlight": "unveil your true destiny.",
+    "subtitle": "Authentic spiritual guidance rooted in ancestral African wisdom, accessible worldwide through a secure, confidential, and compassionate platform.",
+    "ctaPrimary": "Book a Guidance",
+    "ctaSecondary": "Explore Rituals",
+    "statsConsultations": "+12,400 guidance sessions completed",
+    "statsSatisfaction": "98.7% positive feedback",
+    "statsCountries": "34 countries connected"
+  },
+  "features": {
+    "title": "A Sacred, Respectful & Modern Approach",
+    "f1Title": "Verified Guides & Masters",
+    "f1Desc": "Each practitioner is rigorously vetted with strict ethical standards, honoring authentic traditions without deceptive claims.",
+    "f2Title": "Absolute Privacy",
+    "f2Desc": "Your sessions, notes, and consultations are secured by banking-grade encryption and a strict confidentiality pledge.",
+    "f3Title": "100% Secure Payments",
+    "f3Desc": "Seamless transactions through Mobile Money (MTN, Moov, Orange, Wave) and Credit Cards via our partner Chariow.",
+    "f4Title": "Engineered for Any Device",
+    "f4Desc": "Built specifically for mobile networks across Africa and the diaspora, fully responsive even on 3G/4G connections."
+  },
+  "footer": {
+    "copyright": "© 2026 AWS : Africa World Saving. All rights reserved.",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy (APDP & GDPR)",
+    "terms": "Terms & Conditions",
+    "disclaimer": "Ethical Charter & Disclaimer"
+  }
+}
