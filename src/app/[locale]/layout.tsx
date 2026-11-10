@@ -3,6 +3,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { routing } from "@/lib/i18n/routing";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import type { Metadata, Viewport } from "next";
 
 const cormorant = Cormorant_Garamond({
@@ -69,9 +70,11 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`dark ${cormorant.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-cosmos-950 font-sans text-foreground antialiased selection:bg-gold-500/30 selection:text-gold-300">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="relative flex min-h-screen flex-col">
-            {children}
-          </div>
+          <SmoothScrollProvider>
+            <div className="relative flex min-h-screen flex-col">
+              {children}
+            </div>
+          </SmoothScrollProvider>
         </NextIntlClientProvider>
       </body>
     </html>
