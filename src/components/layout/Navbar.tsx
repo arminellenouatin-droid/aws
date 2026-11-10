@@ -62,7 +62,13 @@ export function Navbar() {
             {t("forum")}
           </Link>
           <Link
-            href="/a-propos"
+            href="/blog"
+            className="hover:text-gold-300 transition-colors py-1 relative hover:after:w-full after:w-0 after:h-0.5 after:bg-gold-400 after:absolute after:bottom-0 after:left-0 after:transition-all"
+          >
+            {t("blog")}
+          </Link>
+          <Link
+            href="/about"
             className="hover:text-gold-300 transition-colors py-1 relative hover:after:w-full after:w-0 after:h-0.5 after:bg-gold-400 after:absolute after:bottom-0 after:left-0 after:transition-all"
           >
             {t("about")}
@@ -129,7 +135,14 @@ export function Navbar() {
             {t("forum")}
           </Link>
           <Link
-            href="/a-propos"
+            href="/blog"
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gold-500/10 hover:text-gold-300"
+          >
+            {t("blog")}
+          </Link>
+          <Link
+            href="/about"
             onClick={() => setIsOpen(false)}
             className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gold-500/10 hover:text-gold-300"
           >

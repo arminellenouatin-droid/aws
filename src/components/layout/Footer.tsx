@@ -94,8 +94,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/a-propos" className="hover:text-gold-300 transition-colors">
-                  Notre Charte Déontologique
+                <Link href="/about" className="hover:text-gold-300 transition-colors">
+                  Notre Charte & Mission
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-gold-300 transition-colors">
+                  Foire Aux Questions (FAQ)
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-gold-300 transition-colors">
+                  Assistance & Contact
                 </Link>
               </li>
             </ul>
@@ -127,16 +137,13 @@ export function Footer() {
         <div className="pt-8 border-t border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>{t("copyright")}</p>
           <div className="flex flex-wrap gap-4 text-xs">
-            <Link href="/legal/mentions-legales" className="hover:text-gold-300 transition-colors">
-              {t("legal")}
-            </Link>
-            <Link href="/legal/confidentialite" className="hover:text-gold-300 transition-colors">
+            <Link href="/privacy" className="hover:text-gold-300 transition-colors">
               {t("privacy")}
             </Link>
-            <Link href="/legal/cgv" className="hover:text-gold-300 transition-colors">
+            <Link href="/terms" className="hover:text-gold-300 transition-colors">
               {t("terms")}
             </Link>
-            <Link href="/legal/avertissement" className="hover:text-gold-300 transition-colors">
+            <Link href="/spiritual-disclaimer" className="hover:text-gold-300 transition-colors">
               {t("disclaimer")}
             </Link>
           </div>
