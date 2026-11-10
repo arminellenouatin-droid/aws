@@ -17,7 +17,7 @@ export function Footer() {
             </div>
             <div className="text-xs leading-relaxed text-muted-foreground/90 font-sans">
               <span className="font-semibold text-gold-300 block mb-1 uppercase tracking-wider text-[11px]">
-                Charte d'Éthique & Avertissement Spirituel
+                Charte d&apos;Éthique & Avertissement Spirituel
               </span>
               {tc("ethicalNotice")}
             </div>
@@ -35,7 +35,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Le sanctuaire digital d'accompagnement spirituel authentique, connectant la sagesse séculaire africaine aux femmes et aux hommes du monde entier.
+              Le sanctuaire digital d&apos;accompagnement spirituel authentique, connectant la sagesse séculaire africaine aux femmes et aux hommes du monde entier.
             </p>
             <div className="flex items-center gap-2 text-xs text-gold-400/80 font-medium">
               <Lock className="h-3.5 w-3.5 text-gold-400" />

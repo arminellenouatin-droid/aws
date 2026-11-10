@@ -164,7 +164,7 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div className="space-y-2">
                 <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold">
-                  Domaines d'Intervention
+                  Domaines d&apos;Intervention
                 </span>
                 <h2 className="font-serif text-2xl sm:text-4xl font-bold text-foreground">
                   Des guidances adaptées à votre chemin
@@ -189,7 +189,7 @@ export default function HomePage() {
                   Clarté & Orientation de Vie
                 </h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Faites le point sur vos choix de vie, vos blocages intérieurs et identifiez les opportunités qui s'ouvrent à vous grâce au regard de nos guides spirituels.
+                  Faites le point sur vos choix de vie, vos blocages intérieurs et identifiez les opportunités qui s&apos;ouvrent à vous grâce au regard de nos guides spirituels.
                 </p>
                 <div className="pt-4 border-t border-gold-500/10 flex items-center justify-between">
                   <span className="text-xs font-bold text-gold-300">Format Chat, Audio ou Visio</span>
@@ -233,7 +233,7 @@ export default function HomePage() {
                   Harmonie Professionnelle & Projets
                 </h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Alignez vos entreprises, vos finances et vos activités professionnelles sur les lois universelles de fécondité et d'abondance.
+                  Alignez vos entreprises, vos finances et vos activités professionnelles sur les lois universelles de fécondité et d&apos;abondance.
                 </p>
                 <div className="pt-4 border-t border-gold-500/10 flex items-center justify-between">
                   <span className="text-xs font-bold text-gold-300">Suivi sur mesure</span>
