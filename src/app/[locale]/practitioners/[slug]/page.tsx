@@ -148,7 +148,7 @@ export default async function PractitionerDetailPage({
                   </div>
 
                   <Link
-                    href="/consultations"
+                    href={`/consultations/booking?practitioner=${prac.slug}`}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-500 to-gold-400 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-cosmos-950 shadow-lg shadow-gold-500/25 hover:from-gold-400 hover:to-gold-300 transition-all"
                   >
                     <Calendar className="h-4 w-4" />

@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/consultations",
+    "/consultations/booking",
+    "/consultations/decouverte-gratuite",
     "/practitioners",
     "/blog",
     "/faq",
