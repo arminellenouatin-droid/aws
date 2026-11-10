@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { routing } from "@/lib/i18n/routing";
 import { DEFAULT_CONSULTATION_TYPES, DEFAULT_PRACTITIONERS } from "@/server/dal/consultations";
 import { BLOG_POSTS } from "@/server/dal/blog";
+import { SACRED_PRODUCTS } from "@/lib/constants/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://africaworldsaving.com";
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     "",
     "/about",
+    "/boutique",
     "/consultations",
     "/consultations/booking",
     "/consultations/decouverte-gratuite",
@@ -85,6 +87,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: {
           languages: Object.fromEntries(
             routing.locales.map((loc) => [loc, `${siteUrl}/${loc}/blog/${post.slug}`])
+          ),
+        },
+      });
+    }
+  }
+
+  // 5. Sacred Boutique Products
+  for (const prod of SACRED_PRODUCTS) {
+    for (const locale of routing.locales) {
+      entries.push({
+        url: `${siteUrl}/${locale}/boutique/${prod.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.85,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((loc) => [loc, `${siteUrl}/${loc}/boutique/${prod.slug}`])
           ),
         },
       });

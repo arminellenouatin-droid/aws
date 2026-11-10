@@ -2,14 +2,24 @@
 
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/i18n/routing";
-import { useState } from "react";
-import { Menu, X, Sparkles, Globe, Shield } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Sparkles, Globe, Shield, ShoppingBag } from "lucide-react";
+import { useCartStore } from "@/lib/store/cart-store";
+import { CartDrawer } from "@/components/shop/CartDrawer";
 
 export function Navbar() {
   const t = useTranslations("nav");
   const tc = useTranslations("common");
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { openCart, getTotalCount } = useCartStore();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const cartCount = mounted ? getTotalCount() : 0;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gold-500/10 bg-cosmos-950/80 backdrop-blur-md">
@@ -77,6 +87,18 @@ export function Navbar() {
 
         {/* Action + Lang */}
         <div className="hidden sm:flex items-center gap-3">
+          <button
+            onClick={openCart}
+            className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-gold-500/20 text-gold-300 hover:bg-gold-500/10 transition-colors"
+            aria-label="Ouvrir le panier"
+          >
+            <ShoppingBag className="h-4 w-4" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-gold-500 px-1 text-[10px] font-bold text-cosmos-950">
+                {cartCount}
+              </span>
+            )}
+          </button>
           <Link
             href="/consultations"
             className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-gold-500 to-gold-600 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-cosmos-950 shadow-md shadow-gold-500/20 hover:from-gold-400 hover:to-gold-500 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -86,14 +108,28 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile menu trigger */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-gold-500/20 text-gold-400 hover:bg-gold-500/10"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={openCart}
+            className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-gold-500/20 text-gold-300 hover:bg-gold-500/10 transition-colors"
+            aria-label="Ouvrir le panier"
+          >
+            <ShoppingBag className="h-4 w-4" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-gold-500 px-1 text-[10px] font-bold text-cosmos-950">
+                {cartCount}
+              </span>
+            )}
+          </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-gold-500/20 text-gold-400 hover:bg-gold-500/10"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Dropdown */}
@@ -161,6 +197,9 @@ export function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Cart Drawer Modal */}
+      <CartDrawer />
     </header>
   );
 }
