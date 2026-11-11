@@ -256,6 +256,44 @@
     "orderSuccessSubtitle": "Your order is confirmed. A receipt and download links have been sent to your email.",
     "downloadFiles": "Download Sacred Files"
   },
+  "forum": {
+    "title": "Community Circle & Sacred Forum",
+    "subtitle": "A respectful sanctuary to exchange spiritual experiences, seek answers, and grow in consciousness together.",
+    "newThread": "Start a Discussion",
+    "categories": "Circle Categories",
+    "recentDiscussions": "Recent Discussions",
+    "threadsCount": "{count} topics",
+    "repliesCount": "{count} replies",
+    "viewsCount": "{count} views",
+    "noThreads": "No topics yet in this category. Be the first to share your illumination!",
+    "backToForum": "Back to Community",
+    "replyPlaceholder": "Share your feelings or provide benevolent insights...",
+    "submitReply": "Post Contribution",
+    "pinned": "Pinned by Guides",
+    "locked": "Topic Closed",
+    "charterNotice": "Sacred reminder: Exchanges are founded on mutual respect, benevolence, and spiritual ethics. Hate speech or solicitation will be moderated.",
+    "reactions": {
+      "like": "Support",
+      "pray": "Prayer",
+      "gratitude": "Gratitude",
+      "fire": "Illumination"
+    },
+    "report": "Report to Moderators"
+  },
+  "referral": {
+    "title": "Referral & Fraternity Program",
+    "subtitle": "Share the sanctuary's guidance with loved ones and unlock reciprocal blessings and exclusive benefits.",
+    "shareLink": "Your Unique Fraternity Link",
+    "copyLink": "Copy my link",
+    "copied": "Link copied!",
+    "howItWorks": "How AWS Fraternity Works",
+    "step1Title": "1. Share your link",
+    "step1Desc": "Send your personal link to a friend seeking spiritual orientation or inner peace.",
+    "step2Title": "2. Your invitee is welcomed",
+    "step2Desc": "They receive an immediate 15% discount on their first consultation or sacred shop order.",
+    "step3Title": "3. You receive gratitude",
+    "step3Desc": "For every completed consultation, receive a 5,000 FCFA credit and honorary community points."
+  },
   "footer": {
     "copyright": "© 2026 AWS : Africa World Saving. All rights reserved.",
     "legal": "Legal Notice",

@@ -3,6 +3,7 @@ import { routing } from "@/lib/i18n/routing";
 import { DEFAULT_CONSULTATION_TYPES, DEFAULT_PRACTITIONERS } from "@/server/dal/consultations";
 import { BLOG_POSTS } from "@/server/dal/blog";
 import { SACRED_PRODUCTS } from "@/lib/constants/products";
+import { FORUM_CATEGORIES, INITIAL_THREADS } from "@/lib/constants/forum";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://africaworldsaving.com";
@@ -14,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/consultations",
     "/consultations/booking",
     "/consultations/decouverte-gratuite",
+    "/forum",
+    "/forum/nouveau-sujet",
+    "/parrainage",
     "/practitioners",
     "/blog",
     "/faq",
@@ -104,6 +108,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: {
           languages: Object.fromEntries(
             routing.locales.map((loc) => [loc, `${siteUrl}/${loc}/boutique/${prod.slug}`])
+          ),
+        },
+      });
+    }
+  }
+
+  // 6. Forum Categories
+  for (const cat of FORUM_CATEGORIES) {
+    for (const locale of routing.locales) {
+      entries.push({
+        url: `${siteUrl}/${locale}/forum/${cat.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 0.8,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((loc) => [loc, `${siteUrl}/${loc}/forum/${cat.slug}`])
+          ),
+        },
+      });
+    }
+  }
+
+  // 7. Forum Initial Threads
+  for (const thread of INITIAL_THREADS) {
+    for (const locale of routing.locales) {
+      entries.push({
+        url: `${siteUrl}/${locale}/forum/${thread.categorySlug}/${thread.slug}`,
+        lastModified: new Date(thread.lastReplyAt),
+        changeFrequency: "daily",
+        priority: 0.75,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((loc) => [
+              loc,
+              `${siteUrl}/${loc}/forum/${thread.categorySlug}/${thread.slug}`,
+            ])
           ),
         },
       });

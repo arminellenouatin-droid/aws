@@ -256,6 +256,44 @@
     "orderSuccessSubtitle": "Votre commande est validée. Vous recevrez un récapitulatif par email ainsi que vos accès de téléchargement.",
     "downloadFiles": "Télécharger mes fichiers sacrés"
   },
+  "forum": {
+    "title": "Cercle Communautaire & Forum Sacré",
+    "subtitle": "Un espace fraternel et bienveillant pour partager vos expériences spirituelles, poser vos questions et grandir ensemble.",
+    "newThread": "Ouvrir une discussion",
+    "categories": "Catégories du Cercle",
+    "recentDiscussions": "Discussions Récentes",
+    "threadsCount": "{count} sujets",
+    "repliesCount": "{count} réponses",
+    "viewsCount": "{count} vues",
+    "noThreads": "Aucune discussion pour l'instant dans cette catégorie. Soyez le premier à partager votre lumière !",
+    "backToForum": "Retour au Cercle",
+    "replyPlaceholder": "Partagez votre ressenti ou apportez votre éclairage bienveillant...",
+    "submitReply": "Transmettre ma contribution",
+    "pinned": "Épinglé par les guides",
+    "locked": "Discussion clôturée",
+    "charterNotice": "Rappel fraternel : Les échanges reposent sur le respect mutuel, la bienveillance et l'éthique spirituelle. Tout propos haineux ou prosélyte sera modéré.",
+    "reactions": {
+      "like": "Soutien",
+      "pray": "Prière",
+      "gratitude": "Gratitude",
+      "fire": "Lumière"
+    },
+    "report": "Signaler aux modérateurs"
+  },
+  "referral": {
+    "title": "Programme de Parrainage & Fraternité",
+    "subtitle": "Partagez la lumière du sanctuaire avec vos proches et bénéficiez ensemble de grâces mutuelles et d'avantages exclusifs.",
+    "shareLink": "Votre Lien Fraternel Unique",
+    "copyLink": "Copier mon lien",
+    "copied": "Lien copié !",
+    "howItWorks": "Comment fonctionne la Fraternité AWS ?",
+    "step1Title": "1. Partagez votre lien",
+    "step1Desc": "Transmettez votre lien sacré à un proche en quête d'orientation ou de sérénité.",
+    "step2Title": "2. Votre filleul est accueilli",
+    "step2Desc": "Il bénéficie immédiatement de 15% de réduction sur sa première consultation ou commande.",
+    "step3Title": "3. Vous recevez la grâce",
+    "step3Desc": "Pour chaque filleul ayant consulté, recevez un bon de 5 000 FCFA et des points d'honneur."
+  },
   "footer": {
     "copyright": "© 2026 AWS : Africa World Saving. Tous droits réservés.",
     "legal": "Mentions légales",
