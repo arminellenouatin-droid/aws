@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/forum",
     "/forum/nouveau-sujet",
     "/parrainage",
+    "/quiz",
+    "/rituels",
     "/practitioners",
     "/blog",
     "/faq",
