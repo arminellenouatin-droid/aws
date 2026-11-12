@@ -1,9 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
+import { checkRateLimit, getClientIp } from "@/server/security/rate-limiter";
 
 export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ token: string }> }
 ) {
+  const ip = getClientIp(req);
+  // Rate limit: max 20 download attempts per 5 minutes per IP
+  const rateCheck = await checkRateLimit(`download:${ip}`, 20, 300);
+  if (!rateCheck.allowed) {
+    return NextResponse.json(
+      { error: "Limite de téléchargements atteinte. Veuillez patienter." },
+      { status: 429 }
+    );
+  }
+
   const { token } = await params;
 
   if (!token) {

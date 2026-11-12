@@ -43,32 +43,52 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        // Spiritual Cosmos Palette (AWS: Africa World Saving)
+        // Luminous Spiritual Palette: Bleu Ciel, Noir, Blanc & Bleu Pure (AWS: Africa World Saving)
         cosmos: {
-          950: "#04050c",
-          900: "#070916",
-          850: "#0d1127",
-          800: "#13193a",
-          700: "#1d2553",
-          600: "#2d397a",
+          950: "#ffffff", // Pure Blanc
+          900: "#f8fafc", // Luminous Slate 50
+          850: "#f0f7ff", // Celestial Sky Mist
+          800: "#e0f2fe", // Bleu Ciel 100
+          700: "#bae6fd", // Bleu Ciel 200
+          600: "#7dd3fc", // Bleu Ciel 300
         },
         gold: {
-          300: "#fde087",
-          400: "#f5c042",
-          500: "#e5a720",
-          600: "#c48312",
-          700: "#965f0b",
+          300: "#0284c7", // Bleu ciel profond contrasté
+          400: "#0052ff", // Bleu pur vif
+          500: "#0052ff", // Bleu pur électrique
+          600: "#1d4ed8", // Bleu pur cobalt
+          700: "#1e40af", // Bleu pur nuit
         },
+        bleuPure: {
+          DEFAULT: "#0052ff",
+          400: "#3b82f6",
+          500: "#2563eb",
+          600: "#0052ff",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
+        },
+        bleuCiel: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+        },
+        noir: "#09090b",
+        blanc: "#ffffff",
         terracotta: {
-          400: "#e0785c",
-          500: "#c5583b",
-          600: "#a33e24",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
         },
         emeraldSacred: {
-          400: "#34d399",
-          500: "#10b981",
-          600: "#059669",
-          700: "#047857",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0052ff",
+          700: "#1d4ed8",
         },
       },
       fontFamily: {

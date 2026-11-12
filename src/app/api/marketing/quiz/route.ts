@@ -4,10 +4,27 @@ import { users } from "@/server/db/schema/auth";
 import { consents } from "@/server/db/schema/system";
 import { eq } from "drizzle-orm";
 import crypto from "crypto";
+import { checkRateLimit, getClientIp, sanitizeText, verifyHoneypot } from "@/server/security/rate-limiter";
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+    // Rate limit: max 5 quiz submissions per IP per 5 minutes
+    const rateCheck = await checkRateLimit(`quiz:${ip}`, 5, 300);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Trop de requêtes. Veuillez patienter quelques minutes." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
+
+    // Anti-bot honeypot check
+    if (!verifyHoneypot(body, "website")) {
+      return NextResponse.json({ success: true, discountCode: "BIENVENUE-AWS-15" });
+    }
+
     const { firstName, email, archetype, consent } = body;
 
     if (!email || !firstName) {
@@ -17,7 +34,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const cleanEmail = email.toLowerCase().trim();
+    const cleanEmail = sanitizeText(email).toLowerCase();
+    const cleanFirstName = sanitizeText(firstName);
     let userId: string;
 
     const existing = await db
@@ -33,7 +51,7 @@ export async function POST(req: NextRequest) {
       await db.insert(users).values({
         id: userId,
         email: cleanEmail,
-        name: firstName.trim(),
+        name: cleanFirstName,
         role: "client",
         emailVerified: false,
       });
@@ -44,7 +62,7 @@ export async function POST(req: NextRequest) {
         userId,
         consentType: "marketing_newsletter",
         granted: true,
-        ipAddress: req.headers.get("x-forwarded-for") || undefined,
+        ipAddress: ip,
         userAgent: req.headers.get("user-agent") || undefined,
       });
     }
@@ -55,7 +73,7 @@ export async function POST(req: NextRequest) {
       archetype,
       message: "Votre synthèse sacrée a été générée avec succès.",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("❌ [API_MARKETING_QUIZ_ERROR]", error);
     return NextResponse.json({
       success: true,

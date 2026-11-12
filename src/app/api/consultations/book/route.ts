@@ -5,6 +5,7 @@ import {
   createBooking,
 } from "@/server/services/booking-service";
 import { DEFAULT_CONSULTATION_TYPES, DEFAULT_PRACTITIONERS } from "@/server/dal/consultations";
+import { checkRateLimit, getClientIp, sanitizeText } from "@/server/security/rate-limiter";
 
 export const dynamic = "force-dynamic";
 
@@ -22,8 +23,26 @@ const BookingSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request);
+    // Rate limit: max 10 bookings per IP per 10 minutes
+    const rateCheck = await checkRateLimit(`booking:${ip}`, 10, 600);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Trop de requêtes de réservation. Veuillez patienter avant de réessayer." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const validated = BookingSchema.parse(body);
+
+    // Sanitize user inputs
+    validated.name = sanitizeText(validated.name);
+    validated.email = sanitizeText(validated.email).toLowerCase();
+    validated.phone = sanitizeText(validated.phone);
+    if (validated.spiritualIntentions) {
+      validated.spiritualIntentions = sanitizeText(validated.spiritualIntentions);
+    }
 
     // 1. Resolve consultation type
     const cType =

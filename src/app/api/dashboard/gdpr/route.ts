@@ -2,9 +2,20 @@ import { NextRequest, NextResponse } from "next/server";
 import { requestGdprAction } from "@/server/dal/dashboard";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import { checkRateLimit, getClientIp } from "@/server/security/rate-limiter";
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+    // Rate limit: max 5 GDPR requests per 10 minutes per IP
+    const rateCheck = await checkRateLimit(`gdpr:${ip}`, 5, 600);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Trop de requêtes GDPR. Veuillez patienter avant de renouveler votre demande." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const { type } = body;
 

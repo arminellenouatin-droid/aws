@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroCanvas } from "@/components/3d/HeroCanvas";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
   Sparkles,
   Shield,
@@ -15,7 +15,6 @@ import {
   Compass,
   Flame,
   ArrowRight,
-  Sparkle,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -26,12 +25,12 @@ export default function HomePage() {
     <>
       <Navbar />
 
-      <main className="flex-1">
-        {/* HERO SECTION */}
-        <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24">
-          {/* Subtle cosmos background glowing gradients */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-gold-500/10 via-cosmos-700/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
-          <div className="absolute top-2/3 right-10 w-[400px] h-[400px] bg-terracotta-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <main className="flex-1 bg-white">
+        {/* HERO SECTION - Lumineux, Bleu Ciel, Noir, Blanc, Bleu Pure */}
+        <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-white">
+          {/* Subtle luminous background glowing gradients - Bleu Ciel & Bleu Pure */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-sky-400/15 via-blue-500/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+          <div className="absolute top-2/3 right-10 w-[400px] h-[400px] bg-sky-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
@@ -39,14 +38,14 @@ export default function HomePage() {
               <div className="lg:col-span-7 text-center lg:text-left space-y-6">
                 {/* Badge */}
                 <div className="inline-flex">
-                  <Badge variant="default" className="shadow-[0_0_20px_rgba(245,192,66,0.15)] py-1.5 px-4 text-xs">
-                    <Sparkles className="h-3.5 w-3.5 text-gold-400" />
+                  <Badge variant="default" className="shadow-[0_0_20px_rgba(56,189,248,0.2)] py-1.5 px-4 text-xs">
+                    <Sparkles className="h-3.5 w-3.5 text-blue-600" />
                     <span>{t("badge")}</span>
                   </Badge>
                 </div>
 
                 {/* Title */}
-                <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.15]">
+                <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-950 leading-[1.15]">
                   {t("titlePrefix")}{" "}
                   <span className="text-gold-gradient block sm:inline">
                     {t("titleHighlight")}
@@ -54,7 +53,7 @@ export default function HomePage() {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
+                <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
                   {t("subtitle")}
                 </p>
 
@@ -62,7 +61,7 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                   <Link
                     href="/consultations"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-cosmos-950 shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
                   >
                     <Compass className="h-4 w-4" />
                     {t("ctaPrimary")}
@@ -70,25 +69,25 @@ export default function HomePage() {
 
                   <Link
                     href="/boutique"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-gold-500/30 bg-cosmos-900/60 px-7 py-3.5 text-xs font-semibold tracking-wide text-gold-300 hover:bg-gold-500/10 hover:border-gold-500/60 transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-sky-200 bg-sky-50 px-7 py-3.5 text-xs font-semibold tracking-wide text-blue-900 hover:bg-sky-100 hover:border-sky-300 transition-all"
                   >
-                    <Flame className="h-4 w-4 text-gold-400" />
+                    <Flame className="h-4 w-4 text-blue-600" />
                     {t("ctaSecondary")}
                   </Link>
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gold-500/15 max-w-2xl mx-auto lg:mx-0 text-xs text-muted-foreground">
+                <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-sky-100 max-w-2xl mx-auto lg:mx-0 text-xs text-slate-600">
                   <div className="flex items-center justify-center lg:justify-start gap-2">
-                    <Star className="h-4 w-4 text-gold-400 fill-gold-400" />
+                    <Star className="h-4 w-4 text-blue-600 fill-blue-600" />
                     <span>{t("statsSatisfaction")}</span>
                   </div>
                   <div className="flex items-center justify-center lg:justify-start gap-2">
-                    <Users className="h-4 w-4 text-gold-400" />
+                    <Users className="h-4 w-4 text-blue-600" />
                     <span>{t("statsConsultations")}</span>
                   </div>
                   <div className="flex items-center justify-center lg:justify-start gap-2">
-                    <Shield className="h-4 w-4 text-emeraldSacred-400" />
+                    <Shield className="h-4 w-4 text-sky-600" />
                     <span>{t("statsCountries")}</span>
                   </div>
                 </div>
@@ -103,21 +102,21 @@ export default function HomePage() {
         </section>
 
         {/* PILLARS / FEATURES SECTION */}
-        <section className="py-16 sm:py-24 border-t border-gold-500/15 bg-cosmos-900/40">
+        <section className="py-16 sm:py-24 border-t border-sky-100 bg-slate-50/70">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-              <Badge variant="outline" className="border-gold-500/30 text-gold-400">
+              <Badge variant="outline" className="border-blue-600 text-blue-600">
                 Engagement & Transparence
               </Badge>
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-foreground">
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-950">
                 {tf("title")}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Feature 1 */}
-              <Card className="hover:border-gold-500/40">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/15 border border-gold-500/30 text-gold-400 mb-4">
+              <Card className="hover:border-sky-300">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 border border-sky-200 text-blue-600 mb-4">
                   <Users className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-lg mb-2">
@@ -129,11 +128,11 @@ export default function HomePage() {
               </Card>
 
               {/* Feature 2 */}
-              <Card className="hover:border-emeraldSacred-500/40">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emeraldSacred-500/15 border border-emeraldSacred-500/30 text-emeraldSacred-400 mb-4">
+              <Card className="hover:border-sky-300">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 border border-sky-200 text-sky-600 mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-lg text-emeraldSacred-300 mb-2">
+                <CardTitle className="text-lg mb-2">
                   {tf("f2Title")}
                 </CardTitle>
                 <CardDescription>
@@ -142,8 +141,8 @@ export default function HomePage() {
               </Card>
 
               {/* Feature 3 */}
-              <Card className="hover:border-gold-500/40">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/15 border border-gold-500/30 text-gold-400 mb-4">
+              <Card className="hover:border-sky-300">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 border border-sky-200 text-blue-600 mb-4">
                   <CreditCard className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-lg mb-2">
@@ -155,11 +154,11 @@ export default function HomePage() {
               </Card>
 
               {/* Feature 4 */}
-              <Card className="hover:border-terracotta-500/40">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-terracotta-500/15 border border-terracotta-500/30 text-terracotta-400 mb-4">
+              <Card className="hover:border-sky-300">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 border border-sky-200 text-sky-600 mb-4">
                   <Smartphone className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-lg text-terracotta-300 mb-2">
+                <CardTitle className="text-lg mb-2">
                   {tf("f4Title")}
                 </CardTitle>
                 <CardDescription>
@@ -171,20 +170,20 @@ export default function HomePage() {
         </section>
 
         {/* CONSULTATION TYPES OVERVIEW */}
-        <section className="py-16 sm:py-24">
+        <section className="py-16 sm:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div className="space-y-2">
-                <Badge variant="outline" className="border-gold-500/30 text-gold-400">
+                <Badge variant="outline" className="border-blue-600 text-blue-600">
                   Domaines d&apos;Intervention
                 </Badge>
-                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-foreground">
+                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-950">
                   Des guidances adaptées à votre chemin
                 </h2>
               </div>
               <Link
                 href="/consultations"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-gold-400 hover:text-gold-300 uppercase tracking-wider group"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-blue-600 hover:text-blue-700 uppercase tracking-wider group"
               >
                 <span>Explorer toutes les séances</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -206,10 +205,10 @@ export default function HomePage() {
                   </CardDescription>
                 </div>
                 <CardFooter className="justify-between mt-6">
-                  <span className="text-xs font-bold text-gold-300">Format Chat, Audio ou Visio</span>
+                  <span className="text-xs font-bold text-blue-700">Format Chat, Audio ou Visio</span>
                   <Link
                     href="/consultations"
-                    className="text-xs font-semibold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1 group"
+                    className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group"
                   >
                     <span>Réserver</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
@@ -231,10 +230,10 @@ export default function HomePage() {
                   </CardDescription>
                 </div>
                 <CardFooter className="justify-between mt-6">
-                  <span className="text-xs font-bold text-gold-300">Accompagnement personnalisé</span>
+                  <span className="text-xs font-bold text-blue-700">Accompagnement personnalisé</span>
                   <Link
                     href="/consultations"
-                    className="text-xs font-semibold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1 group"
+                    className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group"
                   >
                     <span>Réserver</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
@@ -256,10 +255,10 @@ export default function HomePage() {
                   </CardDescription>
                 </div>
                 <CardFooter className="justify-between mt-6">
-                  <span className="text-xs font-bold text-gold-300">Suivi sur mesure</span>
+                  <span className="text-xs font-bold text-blue-700">Suivi sur mesure</span>
                   <Link
                     href="/consultations"
-                    className="text-xs font-semibold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1 group"
+                    className="text-xs font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 group"
                   >
                     <span>Réserver</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />

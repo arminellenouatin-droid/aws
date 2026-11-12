@@ -32,53 +32,53 @@ function SacredOrb() {
 
   return (
     <group>
-      {/* Central Glowing Core */}
+      {/* Central Glowing Core - Deep Sapphire & Pure Blue */}
       <mesh ref={meshRef}>
         <sphereGeometry args={[1.3, 32, 32]} />
         <meshStandardMaterial
-          color="#1a1205"
-          emissive="#c48312"
-          emissiveIntensity={0.65}
-          roughness={0.3}
-          metalness={0.8}
+          color="#0f2b5c"
+          emissive="#0052ff"
+          emissiveIntensity={0.7}
+          roughness={0.2}
+          metalness={0.85}
         />
       </mesh>
 
-      {/* Sacred Geometric Icosahedron Wireframe */}
+      {/* Sacred Geometric Icosahedron Wireframe - Bleu Ciel */}
       <mesh ref={wireframeRef}>
         <icosahedronGeometry args={[1.7, 1]} />
         <meshBasicMaterial
-          color="#f5c042"
+          color="#38bdf8"
           wireframe
           transparent
-          opacity={0.35}
+          opacity={0.4}
         />
       </mesh>
 
-      {/* Outer Golden Astrolabe Ring 1 */}
+      {/* Outer Astrolabe Ring 1 - Bleu Pure */}
       <group ref={outerRingRef} rotation={[0.4, 0.2, 0]}>
         <mesh>
           <torusGeometry args={[2.3, 0.02, 16, 100]} />
           <meshStandardMaterial
-            color="#fde087"
-            emissive="#f5c042"
-            emissiveIntensity={0.8}
+            color="#0052ff"
+            emissive="#38bdf8"
+            emissiveIntensity={0.85}
             metalness={0.9}
-            roughness={0.2}
+            roughness={0.15}
           />
         </mesh>
       </group>
 
-      {/* Outer Golden Astrolabe Ring 2 */}
+      {/* Outer Astrolabe Ring 2 - Bleu Ciel Vibrant */}
       <group ref={innerRingRef} rotation={[-0.6, -0.3, 0]}>
         <mesh>
           <torusGeometry args={[2.0, 0.015, 16, 100]} />
           <meshStandardMaterial
-            color="#f5c042"
-            emissive="#c48312"
-            emissiveIntensity={0.6}
+            color="#0ea5e9"
+            emissive="#0052ff"
+            emissiveIntensity={0.65}
             metalness={0.9}
-            roughness={0.2}
+            roughness={0.15}
           />
         </mesh>
       </group>
@@ -89,12 +89,12 @@ function SacredOrb() {
 function StarfieldDust() {
   return (
     <Sparkles
-      count={140}
+      count={150}
       scale={8}
       size={2.5}
       speed={0.3}
-      color="#fde087"
-      opacity={0.7}
+      color="#38bdf8"
+      opacity={0.8}
     />
   );
 }
@@ -119,9 +119,9 @@ export default function CosmosHeroScene() {
         dpr={[1, 1.8]}
       >
         <AdaptiveDpr pixelated />
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[5, 6, 4]} intensity={1.5} color="#fde087" />
-        <pointLight position={[-4, -3, -2]} intensity={0.8} color="#059669" />
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[5, 6, 4]} intensity={1.8} color="#e0f2fe" />
+        <pointLight position={[-4, -3, -2]} intensity={1.2} color="#0052ff" />
 
         <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.6}>
           <SacredOrb />

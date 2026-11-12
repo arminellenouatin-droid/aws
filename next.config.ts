@@ -29,6 +29,10 @@ const securityHeaders = [
     value: "camera=(self), microphone=(self), geolocation=()",
   },
   {
+    key: "X-Permitted-Cross-Domain-Policies",
+    value: "none",
+  },
+  {
     key: "Content-Security-Policy",
     value: `
       default-src 'self';

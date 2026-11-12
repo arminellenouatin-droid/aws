@@ -7,9 +7,20 @@ import { eq } from "drizzle-orm";
 import { initiateOrderCheckout } from "@/server/services/chariow-service";
 import { SACRED_PRODUCTS } from "@/lib/constants/products";
 import crypto from "crypto";
+import { checkRateLimit, getClientIp } from "@/server/security/rate-limiter";
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+    // Rate limit: max 10 checkout attempts per IP per 5 minutes
+    const rateCheck = await checkRateLimit(`checkout:${ip}`, 10, 300);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Trop de requêtes de paiement. Veuillez patienter avant de réessayer." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const { items, customer, shippingAddress, locale = "fr" } = body;
 

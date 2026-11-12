@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import {
   Sun,
   Moon,
-  Sparkles,
   CheckCircle,
   Flame,
   Award,
@@ -64,45 +63,45 @@ export function RitualsTracker() {
   return (
     <div className="space-y-10 max-w-3xl mx-auto text-left">
       {/* Streak Counter Card */}
-      <div className="rounded-3xl border border-gold-500/25 bg-gradient-to-r from-cosmos-900 via-cosmos-950 to-cosmos-900 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl backdrop-blur-sm">
+      <div className="rounded-3xl border border-sky-100 bg-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl">
         <div className="space-y-1">
-          <span className="text-xs font-bold uppercase tracking-wider text-gold-400 flex items-center gap-1.5">
-            <Flame className="h-4 w-4 text-orange-400 animate-pulse" />
+          <span className="text-xs font-bold uppercase tracking-wider text-blue-700 flex items-center gap-1.5">
+            <Flame className="h-4 w-4 text-orange-500 animate-pulse" />
             {t("currentStreak")}
           </span>
-          <div className="font-serif text-3xl sm:text-4xl font-bold text-gold-100">
+          <div className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">
             {t("days", { count: streak })}
           </div>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-slate-600">
             Chaque jour consacré fortifie votre égrégore et dissout les ombres.
           </p>
         </div>
 
-        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold-500/10 border border-gold-500/30 text-gold-400 shadow-[0_0_20px_rgba(245,192,66,0.15)] flex-shrink-0">
-          <Award className="h-8 w-8" />
+        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 border border-sky-200 text-blue-600 shadow-md shadow-blue-500/10 flex-shrink-0">
+          <Award className="h-8 w-8 text-blue-600" />
         </div>
       </div>
 
       {allDoneToday && (
-        <div className="flex items-center gap-3 p-4 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 text-xs sm:text-sm text-emerald-300 font-medium">
-          <CheckCircle className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+        <div className="flex items-center gap-3 p-4 rounded-2xl border border-sky-200 bg-sky-50 text-xs sm:text-sm text-blue-900 font-medium">
+          <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
           <span>{t("alreadyCompleted")}</span>
         </div>
       )}
 
       {/* Lunar Phase Card */}
-      <div className="rounded-2xl border border-gold-500/15 bg-cosmos-900/40 p-6 flex items-start gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-300 flex-shrink-0">
-          <Moon className="h-6 w-6" />
+      <div className="rounded-2xl border border-sky-100 bg-slate-50/80 p-6 flex items-start gap-4 shadow-sm">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 border border-sky-200 text-blue-600 flex-shrink-0">
+          <Moon className="h-6 w-6 text-blue-600" />
         </div>
         <div className="space-y-1">
-          <div className="text-xs font-bold uppercase tracking-wider text-gold-400">
+          <div className="text-xs font-bold uppercase tracking-wider text-blue-700">
             {t("lunarPhase")}
           </div>
-          <h3 className="font-serif text-base font-bold text-gold-200">
+          <h3 className="font-serif text-base font-bold text-slate-950">
             Lune Gibbeuse Croissante • Énergies d&apos;Élévation & de Clarté
           </h3>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-xs text-slate-600 leading-relaxed">
             La période actuelle est particulièrement propice à l&apos;ouverture des voies
             professionnelles et à la purification des espaces intérieurs.
           </p>
@@ -111,7 +110,7 @@ export function RitualsTracker() {
 
       {/* 3 Daily Micro-Rituals */}
       <div className="space-y-4">
-        <h3 className="font-serif text-xl font-bold text-gold-200">
+        <h3 className="font-serif text-xl font-bold text-slate-950">
           Pratiques Rituelles du Jour
         </h3>
 
@@ -120,16 +119,16 @@ export function RitualsTracker() {
           onClick={() => toggleRitual("morning")}
           className={`flex items-start gap-4 p-5 rounded-2xl border transition-all cursor-pointer ${
             completed.morning
-              ? "border-emerald-500/40 bg-emerald-950/20 shadow-md"
-              : "border-gold-500/15 bg-cosmos-900/50 hover:border-gold-500/30"
+              ? "border-blue-600 bg-blue-50/80 shadow-md shadow-blue-500/10"
+              : "border-slate-200 bg-white hover:border-sky-300 shadow-sm"
           }`}
         >
           <div className="pt-0.5">
             <div
               className={`flex h-6 w-6 items-center justify-center rounded-lg border ${
                 completed.morning
-                  ? "border-emerald-400 bg-emerald-500 text-cosmos-950"
-                  : "border-gold-500/30 text-transparent"
+                  ? "border-blue-600 bg-blue-600 text-white"
+                  : "border-slate-300 text-transparent bg-white"
               }`}
             >
               <CheckCircle className="h-4 w-4" />
@@ -137,12 +136,12 @@ export function RitualsTracker() {
           </div>
           <div className="space-y-1 flex-1">
             <div className="flex items-center gap-2">
-              <Sun className="h-4 w-4 text-gold-400" />
-              <h4 className="font-serif text-base font-bold text-gold-200">
+              <Sun className="h-4 w-4 text-blue-600" />
+              <h4 className="font-serif text-base font-bold text-slate-950">
                 {t("morningRitual")}
               </h4>
             </div>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               {t("morningDesc")}
             </p>
           </div>
@@ -153,16 +152,16 @@ export function RitualsTracker() {
           onClick={() => toggleRitual("noon")}
           className={`flex items-start gap-4 p-5 rounded-2xl border transition-all cursor-pointer ${
             completed.noon
-              ? "border-emerald-500/40 bg-emerald-950/20 shadow-md"
-              : "border-gold-500/15 bg-cosmos-900/50 hover:border-gold-500/30"
+              ? "border-blue-600 bg-blue-50/80 shadow-md shadow-blue-500/10"
+              : "border-slate-200 bg-white hover:border-sky-300 shadow-sm"
           }`}
         >
           <div className="pt-0.5">
             <div
               className={`flex h-6 w-6 items-center justify-center rounded-lg border ${
                 completed.noon
-                  ? "border-emerald-400 bg-emerald-500 text-cosmos-950"
-                  : "border-gold-500/30 text-transparent"
+                  ? "border-blue-600 bg-blue-600 text-white"
+                  : "border-slate-300 text-transparent bg-white"
               }`}
             >
               <CheckCircle className="h-4 w-4" />
@@ -170,12 +169,12 @@ export function RitualsTracker() {
           </div>
           <div className="space-y-1 flex-1">
             <div className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-gold-400" />
-              <h4 className="font-serif text-base font-bold text-gold-200">
+              <Clock className="h-4 w-4 text-blue-600" />
+              <h4 className="font-serif text-base font-bold text-slate-950">
                 {t("noonRitual")}
               </h4>
             </div>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               {t("noonDesc")}
             </p>
           </div>
@@ -186,16 +185,16 @@ export function RitualsTracker() {
           onClick={() => toggleRitual("evening")}
           className={`flex items-start gap-4 p-5 rounded-2xl border transition-all cursor-pointer ${
             completed.evening
-              ? "border-emerald-500/40 bg-emerald-950/20 shadow-md"
-              : "border-gold-500/15 bg-cosmos-900/50 hover:border-gold-500/30"
+              ? "border-blue-600 bg-blue-50/80 shadow-md shadow-blue-500/10"
+              : "border-slate-200 bg-white hover:border-sky-300 shadow-sm"
           }`}
         >
           <div className="pt-0.5">
             <div
               className={`flex h-6 w-6 items-center justify-center rounded-lg border ${
                 completed.evening
-                  ? "border-emerald-400 bg-emerald-500 text-cosmos-950"
-                  : "border-gold-500/30 text-transparent"
+                  ? "border-blue-600 bg-blue-600 text-white"
+                  : "border-slate-300 text-transparent bg-white"
               }`}
             >
               <CheckCircle className="h-4 w-4" />
@@ -203,26 +202,29 @@ export function RitualsTracker() {
           </div>
           <div className="space-y-1 flex-1">
             <div className="flex items-center gap-2">
-              <Moon className="h-4 w-4 text-gold-400" />
-              <h4 className="font-serif text-base font-bold text-gold-200">
+              <Droplets className="h-4 w-4 text-blue-600" />
+              <h4 className="font-serif text-base font-bold text-slate-950">
                 {t("eveningRitual")}
               </h4>
             </div>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               {t("eveningDesc")}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Daily Proverb */}
-      <div className="rounded-2xl border border-gold-500/15 bg-cosmos-950/60 p-6 space-y-2 text-center">
-        <span className="text-xs font-semibold uppercase tracking-wider text-gold-400">
-          {t("proverb")}
-        </span>
-        <p className="font-serif text-base italic text-gold-200 max-w-lg mx-auto">
-          {proverbs[0]}
-        </p>
+      {/* Ancestral Proverb Card */}
+      <div className="rounded-2xl border border-sky-200 bg-gradient-to-r from-sky-50 via-white to-sky-50 p-6 flex items-start gap-4 shadow-sm">
+        <BookOpen className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+        <div className="space-y-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-blue-700">
+            Parole Ancestrale du Crépuscule
+          </div>
+          <blockquote className="font-serif text-sm sm:text-base italic text-slate-800 leading-relaxed">
+            {proverbs[streak % proverbs.length]}
+          </blockquote>
+        </div>
       </div>
     </div>
   );

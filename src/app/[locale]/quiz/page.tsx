@@ -45,18 +45,18 @@ export default async function QuizPage({
   const t = await getTranslations({ locale, namespace: "quiz" });
 
   return (
-    <div className="min-h-screen bg-cosmos-950 text-foreground py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white text-slate-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl space-y-12 text-center">
         {/* Header Hero */}
         <div className="space-y-4 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold-400">
-            <Sparkles className="h-3.5 w-3.5" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-700">
+            <Sparkles className="h-3.5 w-3.5 text-blue-600" />
             Oracle & Discernement Intérieur
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-gold-200 leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-slate-950 leading-tight">
             {t("title")}
           </h1>
-          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             {t("subtitle")}
           </p>
         </div>
@@ -65,13 +65,13 @@ export default async function QuizPage({
         <SpiritualQuiz />
 
         {/* Reassurance */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground pt-4">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 pt-4">
           <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-gold-400" />
+            <Shield className="h-4 w-4 text-blue-600" />
             <span>100% Confidentiel & Sécurisé</span>
           </div>
           <div className="flex items-center gap-2">
-            <HeartHandshake className="h-4 w-4 text-gold-400" />
+            <HeartHandshake className="h-4 w-4 text-blue-600" />
             <span>Sans engagement & déontologique</span>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getRecentThreads, getThreadsByCategory, createForumThread } from "@/server/dal/forum";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import { checkRateLimit, getClientIp, sanitizeText } from "@/server/security/rate-limiter";
 
 export async function GET(req: NextRequest) {
   try {
@@ -27,6 +28,16 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+    // Rate limit: max 5 threads per 10 minutes per IP
+    const rateCheck = await checkRateLimit(`forum-thread:${ip}`, 5, 600);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Limite de publications atteinte. Veuillez patienter avant de créer un nouveau sujet." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const { categorySlug, title, content } = body;
 
@@ -37,7 +48,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (title.length < 5 || title.length > 200) {
+    const cleanTitle = sanitizeText(title);
+    const cleanContent = sanitizeText(content);
+
+    if (cleanTitle.length < 5 || cleanTitle.length > 200) {
       return NextResponse.json(
         { error: "Le titre doit comporter entre 5 et 200 caractères" },
         { status: 400 }
@@ -59,8 +73,8 @@ export async function POST(req: NextRequest) {
 
     const result = await createForumThread({
       categorySlug,
-      title,
-      content,
+      title: cleanTitle,
+      content: cleanContent,
       authorId,
     });
 
