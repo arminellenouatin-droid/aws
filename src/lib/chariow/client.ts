@@ -137,9 +137,11 @@ export async function createChariowCheckout(
  */
 export function verifyChariowWebhookSignature(
   rawBody: string,
-  signatureHeader: string | null
+  signatureHeader: string | null,
+  secretOverride?: string
 ): boolean {
-  if (!CHARIOW_WEBHOOK_SECRET || CHARIOW_WEBHOOK_SECRET.includes("TODO")) {
+  const secret = secretOverride || process.env.CHARIOW_WEBHOOK_SECRET || CHARIOW_WEBHOOK_SECRET;
+  if (!secret || secret.includes("TODO")) {
     console.warn("⚠️ [CHARIOW_WEBHOOK] Pas de CHARIOW_WEBHOOK_SECRET défini. Validation contournée en mode dev.");
     return true;
   }
@@ -150,7 +152,7 @@ export function verifyChariowWebhookSignature(
 
   try {
     const expectedSignature = crypto
-      .createHmac("sha256", CHARIOW_WEBHOOK_SECRET)
+      .createHmac("sha256", secret)
       .update(rawBody)
       .digest("hex");
 

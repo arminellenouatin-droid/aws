@@ -356,6 +356,13 @@
     "alreadyCompleted": "Today's ritual completed • Peace be with you",
     "proverb": "Ancestral Proverb"
   },
+  "offline": {
+    "title": "Offline Sanctuary",
+    "subtitle": "Your network connection seems interrupted. Take this moment of silence to breathe deeply.",
+    "retry": "Retry Connection",
+    "tipTitle": "Alignment Guidance",
+    "tipDesc": "The spirit remains connected to the source even when physical signals fade. Your notes and spiritual journal remain safely stored locally."
+  },
   "footer": {
     "copyright": "© 2026 AWS : Africa World Saving. All rights reserved.",
     "legal": "Legal Notice",

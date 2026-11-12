@@ -356,6 +356,13 @@
     "alreadyCompleted": "Rituel du jour accompli • Que la paix soit avec vous",
     "proverb": "Proverbe des Sages"
   },
+  "offline": {
+    "title": "Sanctuaire Hors-Ligne",
+    "subtitle": "Votre connexion réseau semble interrompue. Profitez de cet instant de silence pour respirer profondément.",
+    "retry": "Réessayer la connexion",
+    "tipTitle": "Conseil d'Alignement",
+    "tipDesc": "L'esprit demeure connecté à la source même lorsque les ondes matérielles s'estompent. Vos notes et journal spirituel restent sauvegardés localement."
+  },
   "footer": {
     "copyright": "© 2026 AWS : Africa World Saving. Tous droits réservés.",
     "legal": "Mentions légales",
